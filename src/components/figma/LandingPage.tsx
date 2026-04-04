@@ -16,10 +16,10 @@ import { SiteFooter } from "./SiteFooter";
 
 export function LandingPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="flex min-h-dvh flex-col bg-white">
       <SiteHeader />
       <LeadFormProvider>
-        <main>
+        <main className="w-full min-w-0 flex-1">
           <HeroSection />
           <SpecializationSection />
           <RenovationTypesSection />

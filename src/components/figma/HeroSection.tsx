@@ -54,10 +54,16 @@ export function HeroSection() {
               <span className="shrink-0">sleva až 50 000 Kč</span>
             </p>
 
-            <h1 className="text-balance text-[2.05rem] font-extrabold leading-[1.03] tracking-[-0.03em] sm:text-[2.65rem] sm:leading-[1.04] lg:text-[3rem] xl:text-[3.15rem] xl:leading-[1.05]">
+            <h1 className="text-balance text-[1.8rem] font-extrabold leading-[1.12] tracking-[-0.03em] sm:text-[2.65rem] sm:leading-[1.04] lg:text-[3rem] xl:text-[3.15rem] xl:leading-[1.05]">
               <span className="block text-white">
-                <span className="block">Rekonstrukce vašeho bytu</span>
-                <span className="mt-0.5 block sm:mt-1">bez chaosu.</span>
+                {/* Mobil: jeden celek + menší řez — méně řádků než pevný zlom po „bytu“ */}
+                <span className="block sm:hidden">
+                  Rekonstrukce vašeho bytu bez chaosu.
+                </span>
+                <span className="hidden sm:block">
+                  <span className="block">Rekonstrukce vašeho bytu</span>
+                  <span className="mt-0.5 block sm:mt-1">bez chaosu.</span>
+                </span>
               </span>
               <span className="mt-3 block w-fit max-w-full sm:mt-4">
                 <span className="inline-block rounded-2xl bg-figma-red px-4 py-2.5 font-extrabold leading-[1.05] text-white shadow-[0_10px_28px_-6px_rgba(255,37,0,0.5)] sm:rounded-[18px] sm:px-6 sm:py-3">

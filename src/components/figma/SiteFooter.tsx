@@ -38,7 +38,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-[#2e2e2e] text-white">
-      <div className="mx-auto max-w-[1280px] px-4 pb-8 pt-12 sm:px-8 lg:px-[60px] lg:pb-10 lg:pt-14">
+      <div className="mx-auto max-w-[1280px] px-4 pb-[max(2rem,env(safe-area-inset-bottom))] pt-12 sm:px-8 lg:px-[60px] lg:pb-[max(2.5rem,env(safe-area-inset-bottom))] lg:pt-14">
         {/* Horní řádek: kontakt + sociální sítě */}
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
           <div className="flex min-w-0 flex-wrap items-center gap-x-6 gap-y-5">
