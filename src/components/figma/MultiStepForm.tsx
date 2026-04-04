@@ -296,19 +296,28 @@ export function MultiStepForm({
       className={`mx-auto flex touch-manipulation flex-col border border-neutral-200/90 bg-white ${shellRadius} ${shellShadow} ${widthCls} ${compact ? "shrink-0" : ""} ${shellPad} ${shellHeightCls} ${className}`.trim()}
     >
       <header className="shrink-0 text-center">
-        <p className={headerEyebrowCls}>Nezávazná poptávka</p>
-        <p className={headerSubCls}>Bez obvolávání · Jasně a přehledně</p>
+        {submitted ? (
+          <>
+            <p className={headerEyebrowCls}>Poptávka odeslána</p>
+            <p className={headerSubCls}>Níže máte shrnutí dalších kroků</p>
+          </>
+        ) : (
+          <>
+            <p className={headerEyebrowCls}>Nezávazná poptávka</p>
+            <p className={headerSubCls}>Bez obvolávání · Jasně a přehledně</p>
+          </>
+        )}
       </header>
 
       {submitted ? (
         <div className={`ms-step-enter ${compact ? "mt-3 sm:mt-4" : "mt-4"}`}>
           <div className="flex flex-col items-center text-center">
             <div
-              className="mb-3 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-figma-red/12 ring-2 ring-figma-red/25 sm:mb-4 sm:h-[4.5rem] sm:w-[4.5rem]"
+              className="mb-3 flex h-[3.75rem] w-[3.75rem] shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-figma-red/15 to-figma-red/8 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] ring-[3px] ring-figma-red/20 sm:mb-4 sm:h-[4.25rem] sm:w-[4.25rem]"
               aria-hidden
             >
               <svg
-                className="h-9 w-9 text-figma-red sm:h-10 sm:w-10"
+                className="h-8 w-8 text-figma-red sm:h-9 sm:w-9"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -319,43 +328,66 @@ export function MultiStepForm({
                 <path d="M20 6L9 17l-5-5" />
               </svg>
             </div>
-            <h3 className="text-base font-bold text-figma-ink sm:text-lg sm:text-[22px]">Děkujeme za kontakt</h3>
-            <p className="mt-1.5 max-w-[22rem] text-xs leading-relaxed text-figma-body sm:text-sm">
+            <h3 className="text-balance text-base font-bold text-figma-ink sm:text-lg sm:text-[22px]">Děkujeme za kontakt</h3>
+            <p className="mt-2 max-w-[22rem] text-xs leading-relaxed text-figma-body sm:text-sm">
               Vaši poptávku zpracujeme jen k rekonstrukci bytu — žádný spam ani obvolávání mimo téma.
             </p>
           </div>
 
-          <div className={`mx-auto mt-4 max-w-[20rem] text-left ${compact ? "sm:mt-5" : ""}`}>
-            <p className="text-center text-xs font-bold uppercase tracking-[0.08em] text-figma-ink/80 sm:text-[13px]">
+          <div
+            className="mx-auto mt-5 max-w-[22rem] rounded-2xl border border-neutral-200/90 bg-gradient-to-b from-neutral-50/90 to-white px-4 py-4 text-left shadow-[0_1px_0_rgba(0,0,0,0.04)] sm:mt-6 sm:px-5 sm:py-5"
+          >
+            <p className="text-center text-[11px] font-bold uppercase tracking-[0.1em] text-figma-ink/70 sm:text-xs">
               Co bude následovat
             </p>
-            <ul className="mt-3 space-y-2.5 text-sm leading-snug text-figma-ink sm:space-y-3 sm:text-[15px]">
-              <li className="flex gap-2.5">
-                <span className="mt-0.5 shrink-0 text-lg font-bold leading-none text-figma-red" aria-hidden>
+            <ul className="mt-3.5 space-y-3 text-sm leading-snug text-figma-ink sm:space-y-3.5 sm:text-[15px]">
+              <li className="flex gap-3">
+                <span
+                  className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-figma-red/12 text-sm font-bold text-figma-red"
+                  aria-hidden
+                >
                   ✓
                 </span>
-                <span>Ozve se náš obchodně technický zástupce.</span>
+                <span className="pt-0.5">Ozve se náš obchodně technický zástupce.</span>
               </li>
-              <li className="flex gap-2.5">
-                <span className="mt-0.5 shrink-0 text-lg font-bold leading-none text-figma-red" aria-hidden>
+              <li className="flex gap-3">
+                <span
+                  className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-figma-red/12 text-sm font-bold text-figma-red"
+                  aria-hidden
+                >
                   ✓
                 </span>
-                <span>Nabídka do 48 hodin.</span>
+                <span className="pt-0.5">Nabídka do 48 hodin.</span>
               </li>
             </ul>
           </div>
 
-          <div className={`text-center ${compact ? "mt-4 space-y-3 sm:mt-5 sm:space-y-4" : "mt-5 space-y-4"}`}>
-            <p className="text-xs text-figma-body sm:text-sm">
-              Volejte také:{" "}
-              <a href={`tel:${site.phoneTel}`} className="font-semibold text-figma-red hover:underline">
-                {site.phoneDisplay}
-              </a>
-            </p>
+          <div className={`flex flex-col gap-3 ${compact ? "mt-5 sm:mt-6" : "mt-6"}`}>
+            <a
+              href={`tel:${site.phoneTel}`}
+              className="flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-xl border border-neutral-200/95 bg-white px-4 py-3 text-center text-sm font-medium text-figma-ink shadow-sm transition hover:border-figma-red/35 hover:bg-figma-red/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-figma-red sm:text-[15px]"
+            >
+              <svg
+                className="h-5 w-5 shrink-0 text-figma-red"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              <span>
+                Zavolat{" "}
+                <span className="font-bold text-figma-red tabular-nums">{site.phoneDisplay}</span>
+              </span>
+            </a>
             <button
               type="button"
               onClick={resetAll}
-              className={`btn-figma-outline w-full text-sm sm:text-base ${compact ? "py-2.5 sm:py-3" : "py-3"}`}
+              className={`w-full rounded-xl border border-transparent bg-neutral-100/90 text-sm font-medium text-figma-ink/85 transition hover:bg-neutral-200/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-figma-red sm:text-base ${compact ? "py-2.5 sm:py-3" : "py-3"}`}
             >
               Nová poptávka
             </button>
