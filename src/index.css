@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans antialiased text-figma-ink bg-white;
+  }
+  ::selection {
+    @apply bg-figma-red/20 text-figma-ink;
+  }
+}
+
+@layer components {
+  /** Primární — plná červená (všechny CTA výplní) */
+  .btn-figma-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-[14px] bg-figma-red font-bold text-white no-underline;
+    @apply transition-[background-color,box-shadow,transform] duration-200 ease-out;
+    @apply hover:bg-[#e62200] hover:shadow-md;
+    @apply active:bg-[#cc1e00] active:scale-[0.99];
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-figma-red focus-visible:ring-offset-2;
+    @apply disabled:pointer-events-none disabled:opacity-45 disabled:shadow-none;
+  }
+
+  .btn-figma-primary img,
+  .btn-figma-primary-invert img {
+    @apply transition-transform duration-200 ease-out;
+  }
+
+  /* Bílé tlačítko — ikona jako červený text (figma-red) */
+  .btn-figma-primary-invert img {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(94%) saturate(7150%) hue-rotate(2deg) brightness(99%) contrast(106%);
+  }
+
+  .btn-figma-primary:hover img,
+  .btn-figma-primary-invert:hover img {
+    @apply translate-x-1;
+  }
+
+  /** Sekundární — červený obrys (světlé pozadí) */
+  .btn-figma-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-[14px] border-2 border-figma-red bg-white font-bold text-figma-red no-underline;
+    @apply transition-[background-color,border-color,color,box-shadow,transform] duration-200 ease-out;
+    @apply hover:border-[#e62200] hover:bg-[#fff5f2] hover:text-[#d42000] hover:shadow-sm;
+    @apply active:scale-[0.99] active:bg-[#ffe8e3];
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-figma-red focus-visible:ring-offset-2;
+  }
+
+  /** Sekundární — šedý obrys (např. druhé tlačítko vedle primárního) */
+  .btn-figma-secondary-neutral {
+    @apply inline-flex items-center justify-center gap-2 rounded-[14px] border-2 border-neutral-300 bg-white font-bold text-figma-slate no-underline;
+    @apply transition-[background-color,border-color,color,transform] duration-200 ease-out;
+    @apply hover:border-neutral-400 hover:bg-neutral-50 hover:text-figma-ink;
+    @apply active:scale-[0.99];
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
+  }
+
+  /** Primární na barevném / tmavém pozadí — bílá výplň */
+  .btn-figma-primary-invert {
+    @apply inline-flex items-center justify-center gap-2 rounded-[14px] bg-white font-bold text-figma-red no-underline shadow-sm;
+    @apply transition-[background-color,box-shadow,transform] duration-200 ease-out;
+    @apply hover:bg-neutral-100 hover:shadow-md;
+    @apply active:scale-[0.99] active:bg-neutral-200;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2;
+  }
+
+  /** Sekundární na tmavém / barevném pozadí — bílý obrys */
+  .btn-figma-secondary-inverse {
+    @apply inline-flex items-center justify-center gap-2 rounded-[14px] border-2 border-white bg-transparent font-bold text-white no-underline;
+    @apply transition-[background-color,border-color,transform] duration-200 ease-out;
+    @apply hover:shadow-md;
+    @apply hover:bg-[rgba(255,255,255,0.12)];
+    @apply active:scale-[0.99] active:bg-[rgba(255,255,255,0.2)];
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+  }
+
+  /** Formulář — alias pro neutrální sekundární */
+  .btn-figma-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-[14px] border-2 border-neutral-300 bg-white font-bold text-figma-slate no-underline;
+    @apply transition-[background-color,border-color,color,transform] duration-200 ease-out;
+    @apply hover:border-neutral-400 hover:bg-neutral-50 hover:text-figma-ink;
+    @apply active:scale-[0.99];
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2;
+  }
+
+  .form-option {
+    @apply w-full rounded-[12px] border-2 border-figma-border bg-white text-left font-semibold text-figma-ink;
+    @apply transition-all duration-200 ease-out;
+    @apply hover:border-neutral-300 hover:bg-neutral-50/80 hover:shadow-sm;
+    @apply active:scale-[0.995];
+  }
+
+  .form-option-selected {
+    @apply border-figma-red bg-red-50/60 shadow-sm ring-1 ring-figma-red/20;
+  }
+
+  /* Radiové řádky — pozadí odpovědí #F3F4F6, hover zelený rámec */
+  .form-option-radio {
+    @apply w-full rounded-[12px] border-2 border-[#e5e7eb] bg-[#F3F4F6] text-left font-semibold text-figma-ink;
+    @apply transition-colors duration-200 ease-out;
+    @apply hover:border-figma-green hover:bg-[#eceef2] hover:shadow-sm;
+    @apply active:scale-[0.995];
+  }
+
+  .form-option-radio-selected {
+    @apply border-figma-green bg-figma-green-bg shadow-sm ring-1 ring-figma-green-ring;
+  }
+
+  .form-option-radio-selected:hover {
+    @apply border-figma-green bg-[#dff3e8];
+  }
+
+  @keyframes form-step-enter {
+    from {
+      opacity: 0;
+      transform: translateX(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .form-step-panel,
+  .ms-step-enter {
+    animation: form-step-enter 0.35s ease-out both;
+  }
+
+  @keyframes hero-soft-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-animate {
+    animation: hero-soft-in 0.55s ease-out both;
+  }
+
+  .hero-animate-delay-1 {
+    animation-delay: 80ms;
+  }
+
+  .hero-animate-delay-2 {
+    animation-delay: 140ms;
+  }
+
+  .hero-animate-delay-3 {
+    animation-delay: 220ms;
+  }
+
+  @keyframes hero-scroll-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
+
+  .hero-scroll-hint {
+    animation: hero-soft-in 0.55s ease-out both;
+  }
+
+  .hero-scroll-hint-icon {
+    animation: hero-scroll-bounce 1.5s ease-in-out infinite;
+  }
+
+  /** Bottom lead — pulzující „vlna“ doprava (bez obrázku šipky) */
+  @keyframes bottom-lead-pulse-wave {
+    0%,
+    100% {
+      opacity: 0.2;
+      transform: translateX(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(3px);
+    }
+  }
+
+  .bottom-lead-pulse-chevron {
+    display: inline-block;
+    animation: bottom-lead-pulse-wave 1.35s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-animate,
+    .hero-animate-delay-1,
+    .hero-animate-delay-2,
+    .hero-animate-delay-3,
+    .hero-scroll-hint,
+    .form-step-panel,
+    .ms-step-enter {
+      animation: none !important;
+    }
+
+    .hero-scroll-hint-icon {
+      animation: none !important;
+    }
+
+    .bottom-lead-pulse-chevron {
+      animation: none !important;
+      opacity: 0.65;
+      transform: none;
+    }
+
+    .btn-figma-primary:hover img,
+    .btn-figma-primary-invert:hover img {
+      transform: none;
+    }
+  }
+}
