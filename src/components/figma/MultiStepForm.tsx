@@ -301,24 +301,65 @@ export function MultiStepForm({
       </header>
 
       {submitted ? (
-        <div className={`ms-step-enter text-center ${compact ? "mt-3 space-y-3 sm:mt-4 sm:space-y-4" : "mt-4 space-y-4"}`}>
-          <h3 className="text-base font-bold text-figma-ink sm:text-lg sm:text-[22px]">Děkujeme za kontakt</h3>
-          <p className="text-xs text-figma-body sm:text-base">
-            Ozveme se vám k rekonstrukci vašeho bytu — bez spamu, jen k vaší poptávce.
-          </p>
-          <p className="text-xs text-figma-body sm:text-sm">
-            Volejte také:{" "}
-            <a href={`tel:${site.phoneTel}`} className="font-semibold text-figma-red hover:underline">
-              {site.phoneDisplay}
-            </a>
-          </p>
-          <button
-            type="button"
-            onClick={resetAll}
-            className={`btn-figma-outline w-full text-sm sm:text-base ${compact ? "py-2.5 sm:py-3" : "py-3"}`}
-          >
-            Nová poptávka
-          </button>
+        <div className={`ms-step-enter ${compact ? "mt-3 sm:mt-4" : "mt-4"}`}>
+          <div className="flex flex-col items-center text-center">
+            <div
+              className="mb-3 flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-figma-red/12 ring-2 ring-figma-red/25 sm:mb-4 sm:h-[4.5rem] sm:w-[4.5rem]"
+              aria-hidden
+            >
+              <svg
+                className="h-9 w-9 text-figma-red sm:h-10 sm:w-10"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.25"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+            <h3 className="text-base font-bold text-figma-ink sm:text-lg sm:text-[22px]">Děkujeme za kontakt</h3>
+            <p className="mt-1.5 max-w-[22rem] text-xs leading-relaxed text-figma-body sm:text-sm">
+              Vaši poptávku zpracujeme jen k rekonstrukci bytu — žádný spam ani obvolávání mimo téma.
+            </p>
+          </div>
+
+          <div className={`mx-auto mt-4 max-w-[20rem] text-left ${compact ? "sm:mt-5" : ""}`}>
+            <p className="text-center text-xs font-bold uppercase tracking-[0.08em] text-figma-ink/80 sm:text-[13px]">
+              Co bude následovat
+            </p>
+            <ul className="mt-3 space-y-2.5 text-sm leading-snug text-figma-ink sm:space-y-3 sm:text-[15px]">
+              <li className="flex gap-2.5">
+                <span className="mt-0.5 shrink-0 text-lg font-bold leading-none text-figma-red" aria-hidden>
+                  ✓
+                </span>
+                <span>Ozve se náš obchodně technický zástupce.</span>
+              </li>
+              <li className="flex gap-2.5">
+                <span className="mt-0.5 shrink-0 text-lg font-bold leading-none text-figma-red" aria-hidden>
+                  ✓
+                </span>
+                <span>Nabídka do 48 hodin.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className={`text-center ${compact ? "mt-4 space-y-3 sm:mt-5 sm:space-y-4" : "mt-5 space-y-4"}`}>
+            <p className="text-xs text-figma-body sm:text-sm">
+              Volejte také:{" "}
+              <a href={`tel:${site.phoneTel}`} className="font-semibold text-figma-red hover:underline">
+                {site.phoneDisplay}
+              </a>
+            </p>
+            <button
+              type="button"
+              onClick={resetAll}
+              className={`btn-figma-outline w-full text-sm sm:text-base ${compact ? "py-2.5 sm:py-3" : "py-3"}`}
+            >
+              Nová poptávka
+            </button>
+          </div>
         </div>
       ) : compactChoiceBox ? (
         <div className="mt-2 flex flex-col sm:mt-4 sm:min-h-0 sm:flex-1">
