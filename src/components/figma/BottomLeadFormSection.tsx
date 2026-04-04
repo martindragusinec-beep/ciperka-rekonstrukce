@@ -93,7 +93,12 @@ export function BottomLeadFormSection() {
           </div>
 
           <div className="relative z-10 flex w-full justify-center lg:w-auto lg:justify-end lg:justify-self-end">
-            <MultiStepForm compact compactWide formRootId="form-bottom" className="w-full" />
+            <MultiStepForm
+              compact
+              compactWide
+              formRootId="form-bottom"
+              className="w-full scroll-mt-[4.5rem] sm:scroll-mt-20"
+            />
           </div>
         </div>
       </div>

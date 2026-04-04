@@ -32,7 +32,7 @@ export function SiteHeader() {
             </a>
           </div>
           <a
-            href="#form"
+            href="#form-bottom"
             className="btn-figma-secondary-inverse h-10 shrink-0 px-4 text-sm sm:h-12 sm:px-5 sm:text-base"
           >
             Chci konzultaci

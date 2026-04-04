@@ -56,7 +56,7 @@ export function RenovationTypesSection() {
 
         <div className="mx-auto mt-8 flex max-w-xl flex-col gap-3 sm:mt-10 sm:max-w-none sm:flex-row sm:justify-center sm:gap-4">
           <a
-            href="#form"
+            href="#form-bottom"
             className="btn-figma-primary inline-flex min-h-[3.25rem] w-full items-center justify-center gap-2 px-8 py-3.5 text-base sm:w-auto sm:min-w-[17rem]"
           >
             Chci nezávaznou konzultaci

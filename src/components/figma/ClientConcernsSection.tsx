@@ -53,7 +53,7 @@ export function ClientConcernsSection() {
 
         <div className="mt-12 flex flex-col items-stretch justify-center gap-3 sm:mt-14 sm:flex-row sm:items-center sm:gap-4 lg:mt-16">
           <a
-            href="#form"
+            href="#form-bottom"
             className="btn-figma-primary inline-flex min-h-[3.25rem] w-full items-center justify-center gap-2 px-8 py-3.5 text-base sm:w-auto sm:min-w-[17rem] sm:px-10"
           >
             Chci nezávazné nacenění

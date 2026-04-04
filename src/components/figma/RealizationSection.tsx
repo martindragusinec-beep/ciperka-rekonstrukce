@@ -130,7 +130,7 @@ export function RealizationSection() {
               </dl>
 
               <a
-                href="#form"
+                href="#form-bottom"
                 className="btn-figma-primary mt-6 w-full min-w-0 justify-center gap-2 rounded-lg px-4 py-3.5 text-center text-sm leading-snug sm:text-[15px] lg:mt-auto lg:pt-[14px]"
               >
                 Chci nacenit rekonstrukci

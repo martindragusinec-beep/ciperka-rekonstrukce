@@ -35,7 +35,7 @@ export function MidCtaBanner() {
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 sm:items-stretch">
           <a
-            href="#form"
+            href="#form-bottom"
             className="btn-figma-primary-invert inline-flex min-h-[3.25rem] items-center justify-center whitespace-nowrap px-8 py-3.5 text-base font-bold sm:px-10 sm:text-lg"
           >
             <span className="inline-flex items-center gap-2">

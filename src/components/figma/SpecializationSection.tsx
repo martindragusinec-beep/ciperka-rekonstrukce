@@ -73,7 +73,7 @@ export function SpecializationSection() {
               <span className="font-semibold text-figma-ink">rychlejší a přehlednější</span>.
             </p>
             <a
-              href="#form"
+              href="#form-bottom"
               className="btn-figma-primary inline-flex min-h-[3.25rem] w-full shrink-0 items-center justify-center gap-2 px-8 py-3.5 text-base sm:text-lg md:w-auto md:min-w-[17.5rem]"
             >
               Chci zjistit další postup

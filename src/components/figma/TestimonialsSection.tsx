@@ -74,7 +74,7 @@ export function TestimonialsSection() {
 
         <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
-            href="#form"
+            href="#form-bottom"
             className="btn-figma-primary h-[60px] w-full max-w-xs text-base sm:w-auto sm:px-10"
           >
             Chci nezávazné nacenění

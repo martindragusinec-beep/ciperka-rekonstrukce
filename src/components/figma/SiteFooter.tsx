@@ -100,7 +100,7 @@ export function SiteFooter() {
             <span className="text-figma-red">slevou až 50 000 Kč</span>
           </p>
           <a
-            href="#form"
+            href="#form-bottom"
             className="btn-figma-primary !rounded-lg inline-flex shrink-0 items-center gap-2.5 px-5 pt-3.5 pb-4 text-left text-sm font-bold leading-snug sm:max-w-none sm:text-base"
           >
             <span className="min-w-0">Chci rekonstrukci se slevou</span>
