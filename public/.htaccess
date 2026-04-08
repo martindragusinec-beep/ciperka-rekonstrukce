@@ -1,0 +1,10 @@
+# Po nahrání obsahu `dist/` do složky `rekonstrukce-bytu` na Hostingeru (Apache).
+# Případné budoucí klientské routy přesměruj na index.html.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /rekonstrukce-bytu/
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . index.html [L]
+</IfModule>

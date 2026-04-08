@@ -112,7 +112,7 @@ export function SiteFooter() {
         <div className="mt-12 flex flex-col items-center gap-6 lg:mt-14">
           <div className="w-full">
             <img
-              src="/logo-ciperka.svg"
+              src={assets.logo}
               alt="Čiperka stavby"
               className="h-[38px] w-auto max-w-[187px]"
               width={187}

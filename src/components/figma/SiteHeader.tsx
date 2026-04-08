@@ -7,7 +7,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-[72px] max-w-[1171px] items-center justify-between gap-4 px-4 sm:h-20 sm:px-8">
         <a href="#" className="flex shrink-0 items-center py-1 transition-opacity hover:opacity-90">
           <img
-            src="/logo-ciperka.svg"
+            src={assets.logo}
             alt="Čiperka stavby"
             className="h-7 w-auto sm:h-8"
             width={170}

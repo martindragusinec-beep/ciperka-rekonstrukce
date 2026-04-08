@@ -1,3 +1,4 @@
+import { assets } from "../../siteAssets";
 import { MultiStepForm } from "./MultiStepForm";
 
 const trustItems = [
@@ -22,7 +23,7 @@ export function HeroSection() {
       {/* Fotopozadí */}
       <div className="absolute inset-0 -z-20">
         <img
-          src="/images/hero-bg.png"
+          src={assets.heroBg}
           alt=""
           className="h-full w-full object-cover object-[center_22%] sm:object-[center_30%] lg:object-[center_25%]"
           width={1920}
